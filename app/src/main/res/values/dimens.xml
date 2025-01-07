@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <dimen name="padding_default">16dp</dimen>
+    <dimen name="logo_size">120dp</dimen>
+    <dimen name="margin_top_default">16dp</dimen>
+    <dimen name="padding_small">8dp</dimen>
+    <dimen name="image_size">200dp</dimen>
+    <dimen name="margin_large">32dp</dimen>
+    <dimen name="margin_medium">16dp</dimen>
+    <dimen name="text_size_large">24sp</dimen>
+    <dimen name="text_size_xlarge">28sp</dimen>
+</resources>
