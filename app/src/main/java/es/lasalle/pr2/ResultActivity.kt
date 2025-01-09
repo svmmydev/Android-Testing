@@ -22,7 +22,7 @@ class ResultActivity : AppCompatActivity() {
         buttonFinish.setOnClickListener {
             finish()
         }
-        textViewEmail.text = "example@test.com"
+        textViewEmail.text = intent.getStringExtra("email")
     }
 
     private fun configureUi() {

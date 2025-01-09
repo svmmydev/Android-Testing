@@ -13,19 +13,19 @@
         </DropdownSelection>
         <DialogSelection />
       </SelectionState>
-      <SelectionState runConfigName="test_bothPasswordUnmatch_notNavigating()">
+      <SelectionState runConfigName="test_linkLaunchesIntent()">
         <option name="selectionMode" value="DROPDOWN" />
       </SelectionState>
-      <SelectionState runConfigName="MainActivityTest">
+      <SelectionState runConfigName="MainActivity">
         <option name="selectionMode" value="DROPDOWN" />
       </SelectionState>
-      <SelectionState runConfigName="test_invalidEmail_notNavigating()">
+      <SelectionState runConfigName="ResultActivityTest">
         <option name="selectionMode" value="DROPDOWN" />
       </SelectionState>
-      <SelectionState runConfigName="test_nullPassword_notNavigating()">
+      <SelectionState runConfigName="test_emailFromIntent_displayed()">
         <option name="selectionMode" value="DROPDOWN" />
       </SelectionState>
-      <SelectionState runConfigName="test_validInputs_navigating()">
+      <SelectionState runConfigName="test_linkLaunches()">
         <option name="selectionMode" value="DROPDOWN" />
       </SelectionState>
     </selectionStates>

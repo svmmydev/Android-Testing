@@ -6,7 +6,7 @@
     <string name="confirmation">password confirmation…</string>
     <string name="password">password…</string>
     <string name="email">email…</string>
-    <string name="url">https://lasallefp.com</string>
+    <string name="url">https://lasallefp.com/contactar</string>
     <string name="email_hint">Email</string>
     <string name="password_hint">Password</string>
     <string name="confirm_password_hint">Confirm Password</string>
