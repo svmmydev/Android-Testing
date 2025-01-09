@@ -16,10 +16,14 @@ import org.junit.runner.RunWith
 class ResultActivityTest {
 
 
+    // -----------------------------------------------------
+    // Tests
+    // -----------------------------------------------------
+
     @Test
     fun test_emailFromIntent_displayed() {
 
-        val testEmail = "example@test.com"
+        val testEmail = "samuel@lasalle.es"
 
         val intent = Intent(ApplicationProvider.getApplicationContext(), ResultActivity::class.java).apply {
             putExtra("email", testEmail)
@@ -30,5 +34,4 @@ class ResultActivityTest {
         onView(withId(R.id.textViewEmail))
             .check(matches(withText(testEmail)))
     }
-
 }

@@ -13,6 +13,7 @@ import org.hamcrest.Matchers.allOf
 import androidx.test.espresso.Espresso.onView
 import androidx.test.espresso.action.ViewActions
 import androidx.test.espresso.action.ViewActions.*
+import androidx.test.espresso.assertion.ViewAssertions.matches
 import androidx.test.espresso.matcher.ViewMatchers.*
 import org.junit.Before
 import org.junit.Test
@@ -136,11 +137,25 @@ class MainActivityTest {
         intended(allOf(hasComponent(ResultActivity::class.java.name)))
     }
 
+
     @Test
-    fun test_contactLinkLaunches() {
+    fun test_linkLaunches() {
 
         onView(withId(R.id.needHelpButton)).perform(click())
 
         intended(hasData(Uri.parse("https://lasallefp.com/contactar")))
+    }
+
+
+    @Test
+    fun test_emailFromIntent_displayed() {
+
+        fillEmailField(validEmail)
+        fillPasswordField(correctPassword)
+        fillConfirmPasswordField(correctPassword)
+
+        clickRegisterButton()
+
+        onView(withId(R.id.textViewEmail)).check(matches(withText(validEmail)))
     }
 }
