@@ -13,6 +13,7 @@ import androidx.test.espresso.matcher.ViewMatchers.*
 import org.junit.Before
 import org.junit.Test
 import androidx.test.espresso.intent.Intents
+import androidx.test.espresso.intent.matcher.IntentMatchers.hasExtra
 import com.google.android.material.textfield.TextInputEditText
 import org.junit.After
 
@@ -64,17 +65,13 @@ class MainActivityTest {
 
 
     private fun fillPasswordField(password: String) {
-        onView(allOf(
-            isAssignableFrom(TextInputEditText::class.java), withParent(withParent(withId(R.id.passwordField)))))
-            .perform(typeText(password), closeSoftKeyboard())
+        onView(withId(R.id.passwordFieldEditText)).perform(typeText(password), closeSoftKeyboard())
 
     }
 
 
     private fun fillConfirmPasswordField(password: String) {
-        onView(allOf(
-            isAssignableFrom(TextInputEditText::class.java), withParent(withParent(withId(R.id.confirmPasswordField)))))
-            .perform(typeText(password), closeSoftKeyboard())
+        onView((withId(R.id.confirmPasswordFieldEditText))).perform(typeText(password), closeSoftKeyboard())
 
     }
 
@@ -131,6 +128,6 @@ class MainActivityTest {
 
         clickRegisterButton()
 
-        intended(hasComponent(ResultActivity::class.java.name))
+        intended(allOf(hasComponent(ResultActivity::class.java.name)))
     }
 }

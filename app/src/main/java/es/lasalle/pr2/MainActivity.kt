@@ -16,8 +16,8 @@ import es.lasalle.pr2.databinding.ActivityMainBinding
 class MainActivity : AppCompatActivity() {
 
     private lateinit var binding: ActivityMainBinding
-
-    //TODO: Revisar la captura en WORD del metodo nullPassword, hay que hacer nueva captura con variable validEmail
+    private val emailRegex = Regex("^[A-Za-z0-9](.*)([@])(.+)(\\.)(.+)")
+    private val passwordRegex = Regex("^.{6,}\$")
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -28,11 +28,19 @@ class MainActivity : AppCompatActivity() {
     }
 
     private fun setupUi() = with(binding) {
+
         registerButton.setOnClickListener {
-            if (emailFieldEditText.text.toString().isNotEmpty()) {
+            val email = emailFieldEditText.text.toString()
+            val password = passwordFieldEditText.text.toString()
+            val confirmPassword = confirmPasswordFieldEditText.text.toString()
+
+            if (email.matches(emailRegex) && password.isNotEmpty()
+                && password.matches(passwordRegex) && password == confirmPassword) {
+
                 startActivity(Intent(applicationContext, ResultActivity::class.java).apply {
-                    putExtra("email", emailFieldEditText.text.toString())
+                    putExtra("email", email)
                 })
+
                 finish()
             }
         }
